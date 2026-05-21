@@ -71,42 +71,13 @@ body {
     align-items: center;
     justify-content: space-between;
     background-color: #e3e6f3;
-    padding: 20px 80px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
-}
-
-.search-box {
-    display: flex;
-    align-items: center;
-    width: 300px;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.search-input {
-    display: flex;
-    flex-direction: row;
-    margin: 10px;
-    width: 400px;
-    height: 40px;
-    padding-left: 5px;
-    border: none;
-    border-radius: 10px;
-    font-size: 16px;
-}
-
-.search-box button {
-    width: 70px;
-    height: 40px;
-    border: none;
-    border-radius: 10px;
-    background-color: #7cbfd6;
-    color: white;
-    cursor: pointer;
-}
-
-.search-box button:hover {
-    background-color: #00a1b3;
+    padding: 10px 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06); */
 }
 
 .header-list {
@@ -155,6 +126,11 @@ body {
     padding-bottom: 1em;
     border-bottom: 2px solid #088178;
 }
+.mobile-menu {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
 
 .hero {
    display: flex;
@@ -167,6 +143,7 @@ body {
    background-image: url("../images/hero4.png");
    background-size: cover;
    background-position: center;
+   background-repeat: no-repeat;
 }
 .hero h2 {
     font-size: 60px;
@@ -239,7 +216,7 @@ body {
     padding: 10px;
 }
 .product {
-    height: 26vw;
+    height: auto;
     border-radius: 20px;
     box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.3);
     position: relative;
@@ -297,6 +274,9 @@ body {
 .explore h4 {
     color: #fff;
 }
+#expl-ofr {
+    color: rgb(243, 31, 31);
+}
 .explore a {
     text-decoration: none;
     font-size: 18px;
@@ -308,8 +288,9 @@ body {
     border-radius: 10px;
 }
 .explore a:hover {
-    background-color: #e3e6f3;
-    transform: scale3d(1.1,1.1,1.1);
+    background-color: #3765a5;
+    color: #fff;
+    transition: 0.3s ease;
 }
 
 .blogs {
@@ -505,4 +486,191 @@ footer img {
 #pay {
     border: none;
     box-shadow: none;
+}
+
+@media screen and (max-width: 992px) {
+    #header {
+        padding: 10px 30px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .header-logo {
+        height: 5px;
+        width: 15px;
+    }
+    .header-list {
+        width: 100%;
+        justify-content: center;
+    }
+    .header-list-nav ul li a:hover {
+        color: #088178;
+        padding-bottom: 0.3em;
+        border-bottom: 2px solid #088178;
+    }
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .product {
+        height: auto;
+    }
+    .features {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    .explore h1{
+        font-size: 40px;
+    }
+    .explore a {
+        font-size: 16px;
+    }
+    .blog-top {
+        flex-direction: column;
+        align-items: center;
+    }
+    .blog {
+        width: 90%;
+    }
+    .blog-bottom {
+        flex-wrap: wrap;
+    }
+    .signup-banner {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    footer {
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 10px;
+    }
+    .contact {
+        width: 200px;
+    }
+    .contact img {
+        height: 40px;
+        width: 100px;
+    }
+    footer img {
+        width: 130px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 36px;
+        line-height: 45px;
+    }
+    h2 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+    .hero {
+        padding: 0 20px;
+    }
+    .hero h2 {
+        font-size: 38px;
+        line-height: 45px;
+    }
+    .hero h3 {
+        font-size: 28px;
+    }
+    #header {
+        padding: 10px;
+    }
+    .mobile-menu {
+        display: block;
+    }
+    .header-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #e3e6f3;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        padding: 20px 10x;
+        transition: 0.5s ease;
+    }
+    .header-list.active {
+        display: flex;
+    }
+    .header-list-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .header-list-nav ul li {
+        padding: 15px 0px;
+    }
+    .header-list-icon {
+        margin-top: 10px;
+    }
+    .header-logo img {
+        height: 30px;
+        width: 100px;
+    }
+    .products {
+        grid-template-columns: 1fr;
+    }
+    .feature {
+        width: 100%;
+    }
+    .explore {
+        text-align: center;
+        padding: 20px;
+    }
+    .explore h1 {
+        font-size: 30px;
+    }
+    .explore a {
+        font-size: 14px;
+        padding: 10px;
+    }
+    .blog {
+        height: auto;
+        min-height: 250px;
+    }
+    .blog-b {
+        width: 90%;
+    }
+    .signup-banner {
+        padding: 30px 20px;
+    }
+    footer {
+        flex-direction: column;
+        padding: 20px;
+
+    }
+    .contact {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px){
+
+    .hero h2{
+        font-size: 28px;
+    }
+
+    .hero h3{
+        font-size: 22px;
+    }
+
+    .hero a{
+        width: 180px;
+        height: 45px;
+        font-size: 22px;
+    }
+
+    .search-box button{
+        width: 55px;
+    }
+
+    .products{
+        padding: 0;
+    }
+
+    .product{
+        margin: 10px;
+    }
 }
