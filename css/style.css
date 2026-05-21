@@ -648,29 +648,33 @@ footer img {
 
 @media screen and (max-width: 480px){
 
-    .hero h2{
+    .hero {
+        align-items: center;
+        background-size: 700px 700px;
+    }
+    .hero h2 {
         font-size: 28px;
     }
-
-    .hero h3{
+    .hero h3 {
         font-size: 22px;
     }
-
-    .hero a{
+    .hero a {
         width: 180px;
         height: 45px;
         font-size: 22px;
     }
-
-    .search-box button{
-        width: 55px;
-    }
-
-    .products{
+    .products {
         padding: 0;
     }
-
-    .product{
+    .product {
         margin: 10px;
+    }
+    .signup-box input {
+        width: 180px;
+        font-size: 14px;
+    }
+    .signup-box button {
+        width: 80px;
+        font-size: 14px;
     }
 }
